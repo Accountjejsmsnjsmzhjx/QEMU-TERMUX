@@ -1,0 +1,20 @@
+printf iniciando a instalação pode demorar dependendo do seu dispositivo e da sua internet 
+apt update && apt upgrade -y
+apt -y install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
+apt install libvirglrenderer-dev -y && apt install mesa-common-dev -y && apt install libspice-client-gtk-3.0-dev -y && apt install libepoxy-dev -y && apt install libgbm-dev -y && apt install libdrm-dev -y && apt install libsdl2-2.0-0 -y && apt install python3-sdl2 -y && apt install libpng-dev -y && apt install libjpeg-dev -y && apt install libssl-dev -y && apt install libspice-protocol-dev -y && apt install libspice-server-dev -y && apt install libfdt-dev -y && apt install libsdl2-dev -y && apt install libusb-dev -y && apt install libusb-1.0-0-dev -y && apt install build-essential -y && apt install libusbredirhost-dev -y && apt install libseccomp-dev -y && apt install libcap-ng-dev -y && apt install libaio-dev -y && apt install xz-utils -y && apt install wget -y 
+pkg-config libjpeg-dev libssl-dev libspice-protocol-dev libspice-server-dev
+printf config completa iniciando instalação da qemu (recomendada)
+wget https://download.qemu.org/qemu-4.2.1.tar.xz
+tar xvf qemu-4.2.1.tar.xz
+cd qemu-4.2.1
+mkdir build
+cd build
+../configure --prefix=/usr/local --target-list=i386-softmmu,x86_64-softmmu,arm-softmmu,aarch64-softmmu --enable-guest-agent --enable-vnc --enable-vnc-jpeg --enable-vnc-png --enable-kvm --enable-spice --enable-sdl --enable-virglrenderer --enable-opengl --enable-libusb --enable-usb-redir --enable-gtk
+make -j8
+make install
+clear
+prinf erro detectado iniciando reparação
+apt-get install gettext
+make install
+clear
+prinf instalação concluida com sucesso qemu pronta pra uso
